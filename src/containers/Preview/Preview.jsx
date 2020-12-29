@@ -1,45 +1,61 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Preview.scss';
 import LogoOfiplus from '../../img/LogoOfiplus.png'
-import blue_setup from '../../img/blue_setup.jpg'
-import prev_img_1 from '../../img/prev_img_1.jpg'
+import { Carousel } from 'antd';
 import Footer from '../../components/Footer/Footer'
+import Modal from '../../components/Modal/Modal';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
+import AccountKey from 'mdi-react/AccountKeyIcon'
+import UserAccount from 'mdi-react/CardAccountDetailsIcon';
 
 function Preview () {
 
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
+  const showModalRegister = () => {setShowRegister(true);};
+  const hideModalRegister = () => {setShowRegister(false);};
+
+  const showModalLogin = () => {setShowLogin(true);};
+  const hideModalLogin = () => {setShowLogin(false);};
+
   return (
-    <div className="header">
-      <div className="header_top">
-        <div className="header_top_logo">
-          <img src={LogoOfiplus} className="imgLogo"></img>
-        </div>
-        <div className="header_top_buttons">
-          <button className="reg-log-button">Registro</button>
-          <button className="reg-log-button">Acceso</button>
-        </div>
-      </div>
-      <div className="header_middle">
-        <div className="header_middle_info">
-          <div className="middle_name">Ofinetplus</div>
-            <div className="information">
-              <div className="hole1"></div>
-              <div>
-                <img src={prev_img_1} className="prev_img_1"></img>              
-              </div>
-              <div className="description2">
-                  <div className="row">Ofrecemos los mejores productos con buena relación calidad-precio.</div>
-                  <div className="row">Disponemos de servicio técnico para arreglar cualquier problema.</div>
-                  <div className="row">Programación a medida para ayudarte a ti y a tu empresa.</div>
-                  <button className="contact_butt">Contáctanos</button>
-              </div>
+    <div>
+        <div className="imgCarrusel">
+          <Carousel dots={false}>
+            <div className="imagen1">
             </div>
+            <div className="imagen2">
+            </div>
+            <div className="imagen3">
+            </div>
+            <div className="imagen4">
+            </div>
+          </Carousel>
         </div>
-        <div className="header_middle_img">
-          <img src={blue_setup} className="blue_setup"></img>
-        </div>
-      </div>
-      <Footer/>
+
+        <div className="header-home">
+      <div className='logo'>GEEKFLIX</div>
     </div>
+
+    <div className="buttons">
+      <div>
+        <button animate onClick={() => {showModalLogin()}}>Login</button>
+        <Modal show={showLogin} handleClose={hideModalLogin} title={'Login'} icon={<AccountKey className='verticalAlignIcons'/>}>
+          <Login />
+        </Modal>
+      </div>
+      <div className="hole"></div>
+      <div>
+        <button animate onClick={() => {showModalRegister()}}>Register </button>
+        <Modal show={showRegister} handleClose={hideModalRegister} title={'Register'} icon={<UserAccount className='verticalAlignIcons'/>}>
+          <Register />
+        </Modal>
+      </div>
+    </div>
+  </div>
+
   )
 }
 
