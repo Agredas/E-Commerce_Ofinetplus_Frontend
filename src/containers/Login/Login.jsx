@@ -41,7 +41,7 @@ function Login(props){
         />
       </label>
       <label>
-        * Password:
+        * Contraseña:
         <input
           className="input"
           type="password"
