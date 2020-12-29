@@ -1,5 +1,4 @@
-  
-import React from 'react';
+import React, { useState } from 'react';
 import './Register.scss';
 import {notification } from 'antd';
 import axios from 'axios';
@@ -13,7 +12,7 @@ const validationErrorMessages = {
 
 const doRegister = async (register, props) => {
   try {
-    const resRegister = axios.post(process.env.REACT_APP_BASE_URL + '/api/user/register', user);
+    const resRegister = axios.post(process.env.REACT_APP_BASE_URL + '/api/user/register');
     console.log(resRegister.data);
     notification.success({message:'Welcome!', description:`Thank you for making an account with us, ${register.name}.`})
   } catch (err) {
@@ -40,7 +39,6 @@ const validateAndSend = async (register, props) => {
     console.log(notificationMessage)
     if (allOk) {
       axios.post(process.env.REACT_APP_BASE_URL + '/api/user/register', register, props);
-      console.log(res.data)
       notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
     } else {
       notification.error({ message: 'Registration error.', description: 'There was an error trying to register the client.' })

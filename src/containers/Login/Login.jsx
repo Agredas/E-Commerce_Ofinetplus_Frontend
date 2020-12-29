@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import {useHistory} from 'react-router';
 import './Login.scss';
 import {notification} from 'antd';
 import KeyIcon from 'mdi-react/KeyIcon';
@@ -8,12 +9,8 @@ const validateAndSend = async (props, credentials) =>{
   if (credentials.password === "" || credentials.email === ""){
     notification.error({message:'Error!',description:'Required fields are empty.'})
   }else{
-    axios.post(process.env.REACT_APP_BASE_URL + '/api/user/login', user)
-    console.log('axios done')
-    localStorage.setItem('authToken',res.data.token);
-    localStorage.setItem('user',JSON.stringify(res.data))
-    setUser(res.data)
-    notification.success({message:'Welcome!',description:'Welcome to our application! '+user.email})
+    axios.post(process.env.REACT_APP_BASE_URL + '/api/user/login')
+    notification.success({message:'Welcome!',description:'Welcome to our application!'})
     history.push('/shop')
   }
 };
