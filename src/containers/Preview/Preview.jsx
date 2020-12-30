@@ -11,6 +11,10 @@ import UserAccount from 'mdi-react/CardAccountDetailsIcon';
 
 function Preview () {
 
+  function onChange(a) {
+    console.log(a);
+  }
+
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
@@ -22,8 +26,27 @@ function Preview () {
 
   return (
     <div>
+
+      <div className="header">
+        <div className="header_top">
+          <div className="header_top_logo">
+            <img src={LogoOfiplus} className="imgLogo"></img>
+          </div>
+          <div className="header_top_buttons">
+              <button className="reg-log-button" onClick={() => {showModalLogin()}}>Login</button>
+              <Modal show={showLogin} handleClose={hideModalLogin} title={'Login'} icon={<AccountKey className='verticalAlignIcons'/>}>
+                <Login />
+              </Modal>
+              <button className="reg-log-button" onClick={() => {showModalRegister()}}>Register </button>
+              <Modal show={showRegister} handleClose={hideModalRegister} title={'Register'} icon={<UserAccount className='verticalAlignIcons'/>}>
+                <Register />
+              </Modal>
+          </div>
+        </div>
+      </div>
+
         <div className="imgCarrusel">
-          <Carousel dots={false}>
+          <Carousel dots={false} autoplay={onChange}>
             <div className="imagen1">
             </div>
             <div className="imagen2">
@@ -34,26 +57,6 @@ function Preview () {
             </div>
           </Carousel>
         </div>
-
-        <div className="header-home">
-      <div className='logo'>GEEKFLIX</div>
-    </div>
-
-    <div className="buttons">
-      <div>
-        <button animate onClick={() => {showModalLogin()}}>Login</button>
-        <Modal show={showLogin} handleClose={hideModalLogin} title={'Login'} icon={<AccountKey className='verticalAlignIcons'/>}>
-          <Login />
-        </Modal>
-      </div>
-      <div className="hole"></div>
-      <div>
-        <button animate onClick={() => {showModalRegister()}}>Register </button>
-        <Modal show={showRegister} handleClose={hideModalRegister} title={'Register'} icon={<UserAccount className='verticalAlignIcons'/>}>
-          <Register />
-        </Modal>
-      </div>
-    </div>
   </div>
 
   )
