@@ -5,16 +5,16 @@ import axios from 'axios';
 import AccountPlusIcon from 'mdi-react/AccountPlusIcon'
 
 const validationErrorMessages = {
-  errorPassword: 'Password must contain a minimum of 8 characters, 1 special character, 1 capital letter and at least 1 number.',
-  errorEmptyRequired: 'Required inputs came empty.',
-  errorEquealPassword: 'Password did not match.',
+  errorPassword: 'La contraseña debe contener un mínimo de 8 carácteres, 1 carácter especial, 1 letra mayúscula y 1 número.',
+  errorEmptyRequired: 'Campos requeridos están vacíos.',
+  errorEquealPassword: 'La contraseña no coincide.',
 }
 
 const doRegister = async (register, props) => {
   try {
     const resRegister = axios.post(process.env.REACT_APP_BASE_URL + '/api/user/register');
     console.log(resRegister.data);
-    notification.success({message:'Welcome!', description:`Thank you for making an account with us, ${register.name}.`})
+    notification.success({message:'¡Bienvenid@!', description:`Gracias por unirte a nosotros, ${register.name}.`})
   } catch (err) {
     throw err;
   }
@@ -39,13 +39,13 @@ const validateAndSend = async (register, props) => {
     console.log(notificationMessage)
     if (allOk) {
       axios.post(process.env.REACT_APP_BASE_URL + '/api/user/register', register, props);
-      notification.success({ message :'Registered client.',description:'Succesfully registered client.'})
+      notification.success({ message :'Cliente registrado.',description:'Cliente registrado con éxito.'})
     } else {
-      notification.error({ message: 'Registration error.', description: 'There was an error trying to register the client.' })
+      notification.error({ message: 'Registration error.', description: 'Ha habido un error en el intento de registro.' })
     }
   } catch (err) {
     console.log(err.message)
-    notification.error({ message: 'Error!', description: 'There was an error trying to register the client.' })
+    notification.error({ message: '¡Error!', description: 'Ha habido un error en el intento de registro.' })
   }
 
 }
@@ -76,7 +76,6 @@ function Register(props) {
       <label>* Teléfono: <input className='input' type="text" name="phone" required onChange={eventHandler} /></label>
       <label>* Email: <input className='input' type="email" onChange={eventHandler} name="email" required /></label>
       <label>* Contraseña: <input className='input' type="password" onChange={eventHandler} name="password" required /></label>
-      <label>* Confirmar Contraseña: <input className='input' onChange={eventHandler} type="password" name="rePassword" required /></label>
 
     <div className="button-log-reg">
       <button onClick={async () => {
@@ -91,7 +90,7 @@ function Register(props) {
           console.log(err.message)
         }
         
-      }}><AccountPlusIcon className="verticalAlignIcons" /> Register </button>
+      }}><AccountPlusIcon className="verticalAlignIcons" /> Registro </button>
       </div>
     </div>
   )

@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router';
 import './Login.scss';
 import {notification} from 'antd';
 import KeyIcon from 'mdi-react/KeyIcon';
 
 const validateAndSend = async (props, credentials) =>{
   if (credentials.password === "" || credentials.email === ""){
-    notification.error({message:'Error!',description:'Required fields are empty.'})
+    notification.error({message:'¡Error!',description:'Los campos requeridos están vacíos.'})
   }else{
     axios.post(process.env.REACT_APP_BASE_URL + '/api/user/login')
-    notification.success({message:'Welcome!',description:'Welcome to our application!'})
-    history.push('/shop')
+    notification.success({message:'¡Bienvenid@!',description:'¡Gracias por volver!'})
   }
 };
 
@@ -53,7 +51,7 @@ function Login(props){
           try {
             await validateAndSend(props, login);
           } catch (err) {
-            notification.error({message:'Error!',description:'Wrong credentials.'})
+            notification.error({message:'¡Error!',description:'Credenciales incorrectos.'})
           }
         }}
       >

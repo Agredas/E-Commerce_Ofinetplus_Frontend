@@ -14,7 +14,7 @@
   border-radius: 1em;
   display: flex;
   flex-direction: column;
-  background: whitesmoke;
+  background: #CCDCF4;
   width: 40em;
   height: auto;
   max-height: 80vh;
@@ -27,8 +27,10 @@
 }
 
 .modal-title{
+  width: 90%;
   display: flex;
   flex-direction: row;
+  text-align: center;
   justify-content: center;
   align-items: center;
   height: 4em;  
@@ -36,6 +38,7 @@
 }
 
 .modal-header{
+  text-align: center;
   border-radius: 0.5em 0.5em 0em 0em;
   display: flex;
   flex-direction: row;
