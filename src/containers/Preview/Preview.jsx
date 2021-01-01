@@ -59,6 +59,8 @@ function Preview () {
           </Carousel>
         </div>
         </div>
+
+        <Footer/>
   </div>
 
   )
