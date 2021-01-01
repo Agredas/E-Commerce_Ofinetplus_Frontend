@@ -28,18 +28,18 @@ function Preview () {
     <div>
 
       <div className="header">
-        <div className="header_top">
-          <div className="header_top_logo">
+        <div className="header-top">
+          <div className="header-top-logo">
             <img src={LogoOfiplus} className="imgLogo"></img>
           </div>
-          <div className="header_top_buttons">
-              <button className="reg-log-button" onClick={() => {showModalLogin()}}>Acceso</button>
-              <Modal show={showLogin} handleClose={hideModalLogin} title={'Acceso'} icon={<AccountKey className='verticalAlignIcons'/>}>
-                <Login />
-              </Modal>
+          <div className="header-top-buttons">
               <button className="reg-log-button" onClick={() => {showModalRegister()}}>Registro </button>
               <Modal show={showRegister} handleClose={hideModalRegister} title={'Registro'} icon={<UserAccount className='verticalAlignIcons'/>}>
                 <Register />
+              </Modal>
+              <button className="reg-log-button" onClick={() => {showModalLogin()}}>Acceso</button>
+              <Modal show={showLogin} handleClose={hideModalLogin} title={'Acceso'} icon={<AccountKey className='verticalAlignIcons'/>}>
+                <Login />
               </Modal>
           </div>
         </div>
@@ -55,6 +55,21 @@ function Preview () {
             <div className="image3">
             </div>
             <div className="image4">
+            </div>
+          </Carousel>
+        </div>
+        </div>
+        
+      <div className="carrusel">
+        <div className="imgCarrusel">
+          <Carousel dots={false} autoplay={onChange}>
+            <div>Equipos informáticos a tu medida
+            </div>
+            <div>Servicio técnico para solucionar tus fallos
+            </div>
+            <div>Programas de contabilidad para empresas y autónomos
+            </div>
+            <div>Los mejores productos con buena relación calidad-precio
             </div>
           </Carousel>
         </div>

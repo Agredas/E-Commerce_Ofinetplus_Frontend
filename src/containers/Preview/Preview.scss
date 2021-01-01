@@ -1,4 +1,5 @@
 .carrusel{
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,14 +18,14 @@
   height: 50vh;
 }
 .image2 {
-  background-image: url("../../img/carousel_2.png");
+  background-image: url("../../img/carousel_3.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
   height: 50vh;
 }
 .image3 {
-  background-image: url("../../img/carousel_3.jpg");
+  background-image: url("../../img/carousel_2.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -40,6 +41,7 @@
 
 
 .header {
+  background-color: #d0e8f2;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -48,21 +50,22 @@
 
 .imgLogo{
   width: 20em;
+  margin-left: 2em;
 }
 
 
-  .header-top {
+.header-top {
   display: flex;
   margin-top: 2em;
   width: 83.6%;
   height: 8em;
   margin-left: 8em;
   border-bottom: solid 0.3em #1f6f8b;
-    .header_top_buttons {
+    .header-top-buttons {
       position:absolute; 
-      right:8em;
+      right:10em;
         .reg-log-button {
-          margin-top: 5em;
+          margin-top: 4em;
           margin-left: 2em;
           box-shadow:inset 0px -3px 7px 0px #2a99cc;
           background:linear-gradient(to bottom,#3397d6 5%, #0688fa 100%);
@@ -84,4 +87,3 @@
           }
     }
   }
-  
