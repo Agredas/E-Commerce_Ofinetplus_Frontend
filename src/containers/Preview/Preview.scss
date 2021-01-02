@@ -1,43 +1,57 @@
-.carrusel{
+.carrusel1{
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .imgCarrusel {
+    width: 45%;
+    .image1 {
+      background-image: url("../../img/carousel_1.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 50vh;
+    }
+    .image2 {
+      background-image: url("../../img/carousel_3.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 50vh;
+    }
+    .image3 {
+      background-image: url("../../img/carousel_2.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 50vh;
+    }
+    .image4 {
+      background-image: url("../../img/carousel_4.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 50vh;
+    }
+  }
+}
+
+.carrusel2{
   margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .senCarrusel {
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    font-weight: bold;
+    border-bottom: solid 0.3em #1f6f8b;
+  }
 }
 
-.imgCarrusel {
-  width: 50%;
-}
-
-.image1 {
-  background-image: url("../../img/carousel_1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 50vh;
-}
-.image2 {
-  background-image: url("../../img/carousel_3.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 50vh;
-}
-.image3 {
-  background-image: url("../../img/carousel_2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 50vh;
-}
-.image4 {
-  background-image: url("../../img/carousel_4.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 50vh;
-}
 
 
 .header {

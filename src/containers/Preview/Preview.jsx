@@ -45,7 +45,7 @@ function Preview () {
         </div>
       </div>
       
-      <div className="carrusel">
+      <div className="carrusel1">
         <div className="imgCarrusel">
           <Carousel dots={false} autoplay={onChange}>
             <div className="image1">
@@ -60,8 +60,8 @@ function Preview () {
         </div>
         </div>
         
-      <div className="carrusel">
-        <div className="imgCarrusel">
+      <div className="carrusel2">
+        <div className="senCarrusel">
           <Carousel dots={false} autoplay={onChange}>
             <div>Equipos informáticos a tu medida
             </div>
