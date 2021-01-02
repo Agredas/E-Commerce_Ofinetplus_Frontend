@@ -1,67 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import './Login.scss';
 import {notification} from 'antd';
 import KeyIcon from 'mdi-react/KeyIcon';
 
-const validateAndSend = async (props, credentials) =>{
-  if (credentials.password === "" || credentials.email === ""){
-    notification.error({message:'¡Error!',description:'Los campos requeridos están vacíos.'})
-  }else{
-    axios.post(process.env.REACT_APP_BASE_URL + '/api/user/login')
-    notification.success({message:'¡Bienvenid@!',description:'¡Gracias por volver!'})
-  }
-};
 
-function Login(props){
-  const [login, setLogin]= useState({
-    email: "",
-    password: "",
-  });
-
-  const eventHandler = (ev) =>{
-    setLogin({ ...login, [ev.target.name]: ev.target.value})
-  };
+const Login = () => {
+  const handleSubmit = event =>{
+    event.preventDefault(); // to prevent refreshing the page
+    const client ={
+        email:event.target.email.value,
+        password:event.target.password.value
+    };
+    console.log(client)
+    axios.post('http://localhost:8000/api/user/login', client)
+    .then(res=>{
+      localStorage.setItem('authToken',res.data.token);
+      localStorage.setItem('client',JSON.stringify(res.data))
+      notification.success({message:'¡Bienvenid@!',description:'¡Gracias por volver!'})
+    })
+    .catch(error=> {throw (error)})
+}
 
   return (
     <div className='form-log-reg'>
-      <label>
-        * Email:
-        <input
-          className="input"
-          type="text"
-          name="email"
-          required
-          onChange={eventHandler}
-        />
-      </label>
-      <label>
-        * Contraseña:
-        <input
-          className="input"
-          type="password"
-          name="password"
-          required
-          onChange={eventHandler}
-        />
-      </label>
+      <form className='login-form' onSubmit={handleSubmit}>
+        <label>
+          * Email:
+          <input
+            className="input"
+            type="text"
+            name="email"
+            required
+          />
+        </label>
+        <label>
+          * Contraseña:
+          <input
+            className="input"
+            type="password"
+            name="password"
+            required
+          />
+        </label>
 
-      <div className="button-log-reg">
-      <button className="button-login-size" onClick={async () => {
-          try {
-            await validateAndSend(props, login);
-          } catch (err) {
-            notification.error({message:'¡Error!',description:'Credenciales incorrectos.'})
-          }
-        }}
-      >
-        <KeyIcon className="verticalAlignIcons" />
-        {" "}
-        Login{" "}
-      </button>
-      </div>
+        <div className="button-log-reg">
+          <button className='button-log-reg' type="primary" htmlType="submit"><KeyIcon className="verticalAlignIcons" />Acceder</ button>
+        </div>
+      </form>
     </div>
   );
 }
 
 export default Login;
+
+
+
+<button className='buttonLogin' type="submit">Login</button>

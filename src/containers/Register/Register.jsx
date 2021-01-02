@@ -43,7 +43,7 @@ const Register = () =>{
           <label>* Contraseña: <input className='input' type="password" name="password" required /></label>
       
           <div className="button-log-reg">
-            <button className='button-log-reg' type="primary" htmlType="submit"><AccountPlusIcon className="verticalAlignIcons" />Sign up</ button>
+            <button className='button-log-reg' type="primary" htmlType="submit"><AccountPlusIcon className="verticalAlignIcons" />Registrarse</ button>
           </div>
       </form>
     
