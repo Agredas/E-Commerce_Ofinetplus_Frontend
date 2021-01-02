@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './Register.scss';
-import {Input, notification } from 'antd';
+import {notification } from 'antd';
+import AccountPlusIcon from 'mdi-react/AccountPlusIcon'
 
 
 const Register = () =>{
@@ -33,15 +34,18 @@ const Register = () =>{
     <div className='form-log-reg'>
 
         <form className="register-form" onSubmit={handleSubmit}>
-        <Input type="name" name="name" required placeholder="Write your name" />
-        <Input type="surnames" name="surnames" required placeholder="Write your surnames" />
-        <Input type="address" name="address" required placeholder="Write your adress" />
-        <Input type="city" name="city" required placeholder="Write your city" />
-        <Input type="phone" name="phone" required placeholder="Write your phone" />
-        <Input type="email" name="email" required placeholder="Write your email" />
-        <Input type="password" name="password" required placeholder="Write your password" />
-        <button className='buttonRegister' type="primary" htmlType="submit">Sign up</ button>
-        </form>
+          <label>* Nombre: <input className='input' type="text" name="name" required/></label>
+          <label>* Apellidos: <input className='input' type="text" name="surnames" required/></label>
+          <label>* Dirección: <input className='input' type="text" name="address" required /></label>
+          <label>* Ciudad: <input className='input' type="text" name="city" required/></label>
+          <label>* Teléfono: <input className='input' type="text" name="phone" required /></label>
+          <label>* Email: <input className='input' type="email" name="email" required /></label>
+          <label>* Contraseña: <input className='input' type="password" name="password" required /></label>
+      
+          <div className="button-log-reg">
+            <button className='button-log-reg' type="primary" htmlType="submit"><AccountPlusIcon className="verticalAlignIcons" />Sign up</ button>
+          </div>
+      </form>
     
     </div>
   )
