@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Preview.scss';
+import './Home.scss';
 import LogoOfiplus from '../../img/LogoOfiplus.png'
 import { Carousel } from 'antd';
 import Footer from '../../components/Footer/Footer'
@@ -9,7 +9,7 @@ import Register from '../Register/Register';
 import AccountKey from 'mdi-react/AccountKeyIcon'
 import UserAccount from 'mdi-react/CardAccountDetailsIcon';
 
-function Preview () {
+function Home () {
 
   function onChange(a) {
     console.log(a);
@@ -81,4 +81,4 @@ function Preview () {
   )
 }
 
-export default Preview;
+export default Home;
