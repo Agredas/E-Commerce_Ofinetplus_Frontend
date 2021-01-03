@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import './Login.scss';
+import {useHistory} from 'react-router';
 import {notification} from 'antd';
 import KeyIcon from 'mdi-react/KeyIcon';
 
 
 const Login = () => {
+  const history = useHistory();
   const handleSubmit = event =>{
     event.preventDefault(); // to prevent refreshing the page
     const client ={
@@ -18,6 +20,7 @@ const Login = () => {
       localStorage.setItem('authToken',res.data.token);
       localStorage.setItem('client',JSON.stringify(res.data))
       notification.success({message:'¡Bienvenid@!',description:'¡Gracias por volver!'})
+      history.push('/store')
     })
     .catch(error=> {throw (error)})
 }
@@ -53,7 +56,3 @@ const Login = () => {
 }
 
 export default Login;
-
-
-
-<button className='buttonLogin' type="submit">Login</button>

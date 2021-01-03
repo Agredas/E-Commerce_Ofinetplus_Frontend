@@ -6,8 +6,7 @@ import AccountPlusIcon from 'mdi-react/AccountPlusIcon'
 
 
 const Register = () =>{
-
-    const handleSubmit = event =>{
+  const handleSubmit = event =>{
         event.preventDefault(); 
         const clientBody={
             name: event.target.name.value,
