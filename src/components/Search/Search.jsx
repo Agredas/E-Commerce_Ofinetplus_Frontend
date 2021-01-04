@@ -22,7 +22,7 @@ const Search = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      axios.post('http://localhost:8000/api/product/name/{name}')
+      axios.get('http://localhost:8000/api/product/name/{name}')
     } catch (error) {
       console.log(error.message)
     }
