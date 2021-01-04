@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import './Profile.scss';
+import './AdminProfile.scss';
 import Footer from '../../components/Footer/Footer'
 import {Link} from 'react-router-dom';
 import { useHistory } from "react-router";
@@ -16,7 +16,7 @@ const AdminProfile = ({setClient}) =>{
         headers: {Authorization: `Bearer ${token}`}
       }
       console.log(token)
-      await axios.gest('http://localhost:8000/api/user/logout',{}, options)
+      await axios.get('http://localhost:8000/api/user/logout',{}, options)
       localStorage.removeItem('client')
       localStorage.removeItem('authToken')
       setClient(null)
@@ -29,18 +29,15 @@ const AdminProfile = ({setClient}) =>{
   }
   }
         return (
-        <div className='profile'>
-          <div className='header'>
-              <div className='icon'></div>
-          </div>
-          <div className='buttons'>
-              <Link to='/productsAdmin'>Productos</Link>
+        <div className='adminprofile'>
+          <div className='adminprofilebuttons'>
+              <Link className="general-button" to='/productsAdmin'>Productos</Link>
               <div className='hole1'></div>
-              <Link to='/ordersAdmin'>Pedidos</Link>
+              <Link className="general-button" to='/ordersAdmin'>Pedidos</Link>
           </div>
           <div className='logout'>
             <div>
-              <button className='logout-button' onClick={logout}>Salir</button>
+              <button className='general-button' onClick={logout}>Salir</button>
             </div>
           </div>
           <Footer />

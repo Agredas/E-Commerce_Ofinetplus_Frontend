@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'arwes';
-import './SearchFilm.scss';
+import axios from 'axios'
+import './Search.scss';
 import MagnifyIcon from 'mdi-react/MagnifyIcon';
 
 
