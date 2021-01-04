@@ -26,18 +26,18 @@ function Home () {
 
   return (
     <div>
-
       <div className="header">
         <div className="header-top">
           <div className="header-top-logo">
             <img src={LogoOfiplus} className="imgLogo"></img>
           </div>
           <div className="header-top-buttons">
-              <button className="reg-log-button" onClick={() => {showModalRegister()}}>Registro </button>
+              <button className="general-button" onClick={() => {showModalRegister()}}>Registro </button>
               <Modal show={showRegister} handleClose={hideModalRegister} title={'Registro'} icon={<UserAccount className='verticalAlignIcons'/>}>
                 <Register />
               </Modal>
-              <button className="reg-log-button" onClick={() => {showModalLogin()}}>Acceso</button>
+              <div className="hole-firstview"></div>
+              <button className="general-button" onClick={() => {showModalLogin()}}>Acceso</button>
               <Modal show={showLogin} handleClose={hideModalLogin} title={'Acceso'} icon={<AccountKey className='verticalAlignIcons'/>}>
                 <Login />
               </Modal>

@@ -20,7 +20,7 @@ const Login = () => {
       localStorage.setItem('authToken',res.data.token);
       localStorage.setItem('client',JSON.stringify(res.data))
       notification.success({message:'¡Bienvenid@!',description:'¡Gracias por volver!'})
-      history.push('/store')
+      history.push('/adminprofile')
     })
     .catch(error=> {throw (error)})
 }
