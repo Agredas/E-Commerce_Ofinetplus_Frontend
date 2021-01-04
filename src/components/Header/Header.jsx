@@ -35,11 +35,12 @@ const Header = ({setClient}) =>{
           <div className="header2-top-logo">
              <img src={LogoOfiplus} className="imgLogoHeader"></img>
           </div>
-          <div className="header2-top-buttons">
-            <Link className="buttonheader" to="/store">Tienda</Link>
-            <Link className="buttonheader" to="/clientprofile">Perfil</Link>
-            <Link className="buttonheader" to="/contact">Contacto</Link>
-            <button className='buttonheader' onClick={logout}>Salir</button>
+          <div className="header-top-buttons">
+            <Link className="general-button" to="/store">Tienda</Link>
+            <div className="hole-header"></div>
+            <Link className="general-button" to="/clientprofile">Perfil</Link>
+            <div className="hole-header"></div>
+            <button className='general-button' onClick={logout}>Salir</button>
         </div>
       </div>
     </div>

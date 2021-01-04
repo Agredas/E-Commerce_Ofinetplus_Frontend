@@ -3,7 +3,7 @@
   background-color: #d0e8f2;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
 }
 
@@ -13,35 +13,35 @@
 
 .header2-top {
   display: flex;
+  flex-direction: row;
   margin-top: 2em;
   width: 83.6%;
   height: 5em;
   margin-left: 8em;
   border-bottom: solid 0.3em #1f6f8b;
-    .header2-top-buttons {
-      position:absolute; 
+    .header-top-buttons {
+      position:absolute;
+      display: flex;
+      flex-direction: row;
       right:10em;
-        .buttonheader {
-          font-size: 3em;
-          margin-top: 1.5em;
-          margin-left: 2em;
-          box-shadow:inset 0em -0.1em 0.4em 0em #2a99cc;
-          background:linear-gradient(to bottom,#3397d6 5%, #0688fa 100%);
-          background-color:#3397d6;
-          border-radius:0.5em;
-          border: none;
-          display:inline-block;
-          cursor:pointer;
-          color:#ffffff;
-          font-size:0.93em;
-          padding:9px 23px;
-          text-decoration:none;
-          justify-content: center;
-          text-align: center;
-            .buttonheader:hover {
-              background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
-              background-color:#0688fa;
-            }
-          }
+      margin-top: 1em;
+      .hole-header{
+        width: 1.5em;
+      }
+      .general-button{
+        border: none;
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        color:  #11537A;
+        background-color:#a5c4c7;
+        cursor: pointer;
+        border-radius: 0.6em;
+        padding: 0.3em;
+        &:hover{
+        background-color: #11537A;
+        color: #3EB6C2;
+      }
+      }
     }
   }
