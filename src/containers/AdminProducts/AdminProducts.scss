@@ -1,0 +1,58 @@
+  
+.productAdminProfile{
+  display: flex;
+  flex-direction: column;
+  color: #84a9ac;
+  height: 100vh;
+  width: 100vw;
+}
+
+.productContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+
+  .infoAppointment {
+      padding: 2vh;
+      border-radius: 1em;
+      margin: 2em;
+      background-color: #a5c4c7;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      vertical-align: middle
+  }
+  .inside{
+    background-color: #a5c4c7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    color:  #11537A;
+  }
+
+  .buttondelete{
+    display: flex;
+    justify-content: center;
+    background-color: #a5c4c7;
+    margin-top: 0.5em;
+
+
+    
+    .deleteButton{
+    cursor: pointer;
+    box-shadow:inset 0px 39px 0px -24px #e67a73;
+	  background-color:#e4685d;
+	  border-radius:4px;
+	  border:1px solid #ffffff;
+	  display:inline-block;
+	  color:#ffffff;
+	  -family:Arial;
+	  font-size:15px;
+	  padding:6px 15px;
+	  text-decoration:none;
+	  text-shadow:0px 1px 0px #b23e35;
+    }
+  }
+}
