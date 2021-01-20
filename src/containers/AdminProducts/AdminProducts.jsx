@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';import axios from 'axios';
 import './AdminProducts.scss';
 import { notification  } from 'antd';
+import CreateProduct from '../CreateProduct/CreateProduct';
 
 const AdminProducts = ({client, setClient}) =>{
+
+  const [showCreateProduct, setShowCreateProduct] = useState(false);
+
+  const showModalCreateProduct = () => {setShowCreateProduct(true);};
+  const hideModalCreateProduct = () => {setShowCreateProduct(false);};
+
   const [products,setProducts] = useState([]);
   useEffect(()=>{
     const options = { headers: { Authorization: `Bearer ${client.token}` }};
@@ -30,6 +37,12 @@ const AdminProducts = ({client, setClient}) =>{
 
   return (
       <div className='productAdminProfile'>
+        <div className="create-product-button">
+          <button className="general-button" onClick={() => {showModalCreateProduct()}}>Añadir Producto </button>
+          <Modal show={showCreateProduct} handleClose={hideModalCreateProduct} title={'Añadir Producto'}>
+            <CreateProduct />
+          </Modal>
+        </div>
         <div className='productContainer'>
           {products?.map(product =>
               <div key={appointment._id} className='infoAppointment'>
@@ -44,7 +57,6 @@ const AdminProducts = ({client, setClient}) =>{
             </div>)}
         </div>
       </div>
-      
         )
 }
 
