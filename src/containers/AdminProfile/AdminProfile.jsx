@@ -32,8 +32,6 @@ const AdminProfile = ({setClient}) =>{
         <div className='adminprofile'>
           <div className='adminprofilebuttons'>
               <Link className="general-button" to='/adminproducts'>Productos</Link>
-              <div className='hole1'></div>
-              <Link className="general-button" to='/adminorders'>Pedidos</Link>
           </div>
           <div className='logout'>
             <div>
