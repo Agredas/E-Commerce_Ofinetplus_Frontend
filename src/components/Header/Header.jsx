@@ -41,6 +41,11 @@ const Header = ({setClient}) =>{
             <Link className="general-button" to="/clientprofile">Perfil</Link>
             <div className="hole-header"></div>
             <button className='general-button' onClick={logout}>Salir</button>
+            <div className="cart">Carrito         
+                <Link to="/cart">
+                    <i className="shopping"></i>
+                </Link>
+            </div>
         </div>
       </div>
     </div>
